@@ -1,7 +1,8 @@
 import Constants from 'expo-constants';
 import { Text,StyleSheet,View } from 'react-native';
+import BigBlueText from './BigBlueText';
 
-const styles = StyleSheet({
+const styles = StyleSheet.create({
     container: {
         marginTop:Constants.statusBarHeight,
         flexGrow: 1,
@@ -9,8 +10,12 @@ const styles = StyleSheet({
     }
 });
 const Main =() => {
-    <View style={styles.container}>
+    return(
+         <View style={styles.container}>
         <Text>Rate repository application</Text>
-    </View>
+        <BigBlueText/>
+    </View>   
+    )
+
 }
 export default Main;
