@@ -1,15 +1,26 @@
-import Text from './Text';
+import {StyleSheet, View} from "react-native";
+import{Route,Routes,Navigate} from 'react-router-native'
 
+import RepositoryList from './RepositoryList';
+import AppBar from './AppBar';
+import theme from 'theme';
+
+const styles = StyleSheet.create({
+   container: {
+       backgroundColor: theme.colors.mainBackground,
+       flexGrow: 1,
+       flexShrink: 1
+   },
+});
 const Main = () => {
     return (
-        <>
-        <Text>Simple text</Text>
-        <Text style={{paddingBottom: 10}}>Text with custom style</Text>
-            <Text fontWeight='bold' fontSize='subheading'>
-                Bold subheading
-            </Text>
-            <Text color='textSecondary'>Text with secondary color</Text>
-        </>
+        <View style={styles.container}>
+            <AppBar/>
+            <Routes>
+                <Route path="/" element={<RepositoryList/>} exact/>
+                <Route path="/" element={<RepositoryList/>} exact/>
+            </Routes>
+        </View>
     )
 
 }
